@@ -1,7 +1,6 @@
 ﻿using Send_Email_with_attached_CSV.Core.Contracts;
 using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Linq;
 using static Send_Email_with_attached_CSV.Program;
 
@@ -18,11 +17,11 @@ namespace Send_Email_with_attached_CSV.Core
 
         public List<List<string>> CreateReportByCountry()
         {
-            var finalResult = employees.GroupBy(e => e.Country);
+            var groupedEmployees = employees.GroupBy(e => e.Country);
 
             var readyForImport = new List<List<string>>();
 
-            foreach (var item in finalResult)
+            foreach (var item in groupedEmployees)
             {
                 var country = new List<string>();
 
@@ -44,7 +43,6 @@ namespace Send_Email_with_attached_CSV.Core
             var orderedReadyFormImport = readyForImport.OrderByDescending(a => a[1]).ToList();
 
             return orderedReadyFormImport;
-            ;
         }
     }
 }

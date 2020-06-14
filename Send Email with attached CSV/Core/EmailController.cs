@@ -7,7 +7,7 @@ namespace Send_Email_with_attached_CSV.Core
 {
     public class EmailController
     {
-        public void sendMail(string emailSender, string emailPassword, string emailReceiver)
+        public void SendMail(string emailSender, string emailPassword, string emailReceiver)
         {
             try
             {

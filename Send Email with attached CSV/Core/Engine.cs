@@ -62,7 +62,7 @@ namespace Send_Email_with_attached_CSV.Core
             csv.WriteInCsv(readyForImport.CreateReportByCountry());
 
             //Send email with report           
-            email.sendMail(emailSender, emailPassword, emailReceiver);
+            email.SendMail(emailSender, emailPassword, emailReceiver);
         }       
     }    
 }
